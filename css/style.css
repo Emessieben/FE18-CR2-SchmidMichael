@@ -5,11 +5,39 @@
 }
 
 /* Navbar */
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-weight: bold;
+}
 .navbar-toggler-icon {
     filter: invert(1);
 }
 .notification-icon {
-    margin-right: 70px;
+    margin: auto 70px auto auto;
+    transition: 0.4s;
+}
+
+.notification-icon:hover {
+    transform: rotate(-30deg);
+}
+
+.nav-link {
+    border: solid 1px rgb(34, 37, 41);
+    border-radius: 4px;
+}
+.nav-link:hover {
+    border: solid 1px white;
+    border-radius: 4px;
+}
+/* Main */
+
+/* Cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* Footer */
@@ -24,3 +52,10 @@ footer i {
     font-size: 1.5rem;
     text-decoration: none;
 }
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 782px) {
+    .card {
+        margin: 0 auto;
+    }
+} 

@@ -3,54 +3,63 @@ let toDo = `[
         "taskName": "shopping", 
         "image": "images/groceries.jpeg", 
         "description": "Shop for weekly groceries at Aldi", 
-        "importance": 0    
+        "importance": 0,
+        "deadline": "13.02.2022"  
     },
     { 
-        "taskName": "grid % flex", 
-        "image": "img/groceries.jpg", 
+        "taskName": "grid % flex",
+        "image": "images/code.jpeg", 
         "description": "learn and do some exercises for css layout", 
-        "importance": 3   
+        "importance": 0,
+        "deadline": "19.02.2022"    
     },
     { 
         "taskName": "clean bathroom", 
-        "image": "img/groceries.jpg", 
+        "image": "images/bathroom.jpeg", 
         "description": "clean shower and toilet", 
-        "importance": 1    
+        "importance": 0,
+        "deadline": "17.02.2022"     
     },
     { 
         "taskName": "valentines day", 
-        "image": "img/groceries.jpg", 
+        "image": "images/valentines-day.jpeg", 
         "description": "buy roses for valentines day", 
-        "importance": 5    
+        "importance": 0,
+        "deadline": "14.02.2022"     
     },
     { 
         "taskName": "contracts", 
-        "image": "img/groceries.jpg", 
+        "image": "images/paper.jpeg", 
         "description": "check contracts for insurance", 
-        "importance": 0    
+        "importance": 0,
+        "deadline": "22.02.2022"     
     },
     { 
         "taskName": "present", 
-        "image": "img/groceries.jpg", 
+        "image": "images/gift.jpeg", 
         "description": "buy present for brothers birthday", 
-        "importance": 2    
+        "importance": 0,
+        "deadline": "14.03.2022"     
     },
     { 
         "taskName": "wardrobe", 
-        "image": "img/groceries.jpg", 
+        "image": "images/wardrobe.jpeg", 
         "description": "sort wardrobe and spend the unnecessary clothes", 
-        "importance": 0    
+        "importance": 0,
+        "deadline": "31.03.2022"     
     },
     { 
-        "taskName": "window cleaning", 
-        "image": "img/groceries.jpg", 
+        "taskName": "clean windows", 
+        "image": "images/window.jpeg", 
         "description": "clean the windows before mother visit", 
-        "importance": 4    
+        "importance": 0,
+        "deadline": "17.02.2022"     
     },
     { 
         "taskName": "watch GOT", 
-        "image": "img/groceries.jpg", 
+        "image": "images/got.jpeg", 
         "description": "rewatch Game of Thrones and skip last season", 
-        "importance": 0    
+        "importance": 0,
+        "deadline": "28.02.2022"     
     }
 ]`
