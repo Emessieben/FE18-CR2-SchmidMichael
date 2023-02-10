@@ -35,18 +35,22 @@ body {
 }
 /* Main */
 
-.wrapper {
-    width: auto;
-    height: auto;
+.tasks {
+    width: 85%;
 }
 
 /* Cards */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
 }
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+    display: none;
 }
 
 /* Footer */
@@ -57,14 +61,11 @@ footer {
 }
 
 footer i {
-    margin: 20px 20px;
+    margin: 20px 10px;
     font-size: 1.5rem;
     text-decoration: none;
 }
 
-/* MEDIA QUERY */
-@media only screen and (max-width: 782px) {
-    .card {
-        margin: 0 auto;
-    }
-} 
+.copyright {
+    font-size: 0.8rem;
+}

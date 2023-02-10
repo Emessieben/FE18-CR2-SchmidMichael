@@ -1,9 +1,11 @@
 const tasks = JSON.parse(toDo);
-// col-lg-4 col-md-6 col-sm-12 my-2
+const cardContainer = document.querySelector(".card-container");
+
 tasks.forEach(task => {
-    document.querySelector(".card-container").innerHTML +=
-    `  
-  <div class="wrapper">
+  // create 1 card for each task
+    cardContainer.innerHTML +=
+`
+<div class="wrapper">
     <div class="card my-3" style="width: 18rem;">
       <img src="${task.image}" class="card-img-top px-1 pt-4" alt="${task.taskName}">
       <div class="card-body">
@@ -11,18 +13,17 @@ tasks.forEach(task => {
         <p class="card-text">${task.description}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Priority: <button type="button" class="btn-prio btn btn-sm btn-success"> ${task.importance}</button></li>
-        <li class="list-group-item">Deadline: ${task.deadline}</li>
+        <li class="list-group-item"><i class="bi bi-exclamation-triangle-fill"></i> Priority: <button type="button" class="btn-prio btn btn-sm btn-success"> ${task.importance}</button></li>
+        <li class="list-group-item"><i class="bi bi-calendar-x-fill"></i> Deadline: ${task.deadline}</li>
       </ul>
       <div class="card-body ms-auto">
         <button type="button" class="btn-d btn btn-sm btn-danger"><i class="bi bi-trash3"></i> Delete</button>
         <button type="button" class="btn-d btn btn-sm btn-primary"><i class="bi bi-check-circle-fill"></i> Done</button>
       </div>
     </div>
-  </div>
-  `
+</div>
+`
 });
-
 const prioBtns = document.querySelectorAll(".btn-prio");
 
 // increase priority and change color
@@ -45,77 +46,42 @@ prioBtns.forEach(function (btn) {
 })
 })
 
+// Done or Delete Button
+const btnD = document.querySelectorAll(".btn-d");
+
+btnD.forEach(function(btn) {
+    btn.addEventListener("click", function (event) {
+      console.log(event.target);
+      let cardEventTarget = event.target.parentElement.parentElement;
+      cardEventTarget.classList.add("hidden");
+    })
+  })
+
+// Sort
 const sortBtn = document.querySelector(".sort-btn");
 
 sortBtn.addEventListener("click", function () {
   let innerPrio = document.querySelectorAll(".btn-prio");
+  console.log(innerPrio.length);
   let arrayPrio = [];
-  
-  for (btn of innerPrio) {
-    console.log(btn.innerHTML);
-    arrayPrio.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  for (let index = 0; index < innerPrio.length; index++) {
+    const element = array[index];
+    
   }
-  let test = document.querySelector(".test");
-  test.innerHTML = arrayPrio[0];
-})
+    
+//   for (btn of innerPrio) {
+//     // console.log(btn.innerHTML);
 
-// Sort
-function sorter(array){
-  let swap, done = false, swapped;
-  // is it done?
-  while (!done){
-    swapped = 0;
-    for(i=1; i < array.length; i++){
-
-      // compare
-      if (array[i-1] > array[i]){
-        // swap
-        swap = array[i];
-        array[i] = array[i-1];
-        array[i-1] = swap;
-        swapped = 1;
-      };
-    };
-    if (swapped == 0) {
-      done = true;
-    }
-  }
-  return array;
+//     if (btn.innerHTML > arrayPrio[0]) {
+//       arrayPrio.unshift(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+//     } else {
+//       arrayPrio.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+//     }
+//   }
+//   console.log(arrayPrio);
+//   let test = document.querySelector(".test");
+//   cardContainer.innerHTML = null;
+//   for (i in arrayPrio)
+//     cardContainer.innerHTML += arrayPrio[i];
 }
-
-let numb = [9,8,7,5,6,2,1]
-
-function sorter(array){
-  let swap, done = false, swapped;
-  // is it done?
-  while (!done){
-    swapped = 0;
-    for(i=1; i < array.length; i++){
-
-      // compare
-      if (array[i-1] > array[i]){
-        // swap
-        swap = array[i];
-        array[i] = array[i-1];
-        array[i-1] = swap;
-        swapped = 1;
-      };
-    };
-    if (swapped == 0) {
-      done = true;
-    }
-  }
-  return array;
-}
-
-console.log(sorter(numb));
-
-// Done or Delete Button
-// const btnD = document.querySelectorAll(".btn-d");
-
-// btnD.forEach(function(btn) {
-//     btn.addEventListener("click", function (event) {
-//       console.log(event)
-//     })
-//   })
-
+);
