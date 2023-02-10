@@ -1,7 +1,7 @@
 let toDo = `[
     { 
         "taskName": "shopping", 
-        "image": "img/groceries.jpg", 
+        "image": "images/groceries.jpeg", 
         "description": "Shop for weekly groceries at Aldi", 
         "importance": 0    
     },
