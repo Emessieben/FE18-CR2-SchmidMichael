@@ -3,10 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+.notification-icon {
+    margin-right: 70px;
+}
+
 /* Footer */
 footer {
     text-align: center;
-    padding: 7% 15% 3%;
+    padding: 6% 15% 1%;
+    margin-top: 5%;
 }
 
 footer i {
