@@ -50,6 +50,7 @@ const sortBtn = document.querySelector(".sort-btn");
 sortBtn.addEventListener("click", function () {
   let innerPrio = document.querySelectorAll(".btn-prio");
   let arrayPrio = [];
+  
   for (btn of innerPrio) {
     console.log(btn.innerHTML);
     arrayPrio.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
