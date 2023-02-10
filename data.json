@@ -1,0 +1,56 @@
+let toDo = `[
+    { 
+        "taskName": "shopping", 
+        "image": "img/groceries.jpg", 
+        "description": "Shop for weekly groceries at Aldi", 
+        "importance": 0    
+    },
+    { 
+        "taskName": "grid % flex", 
+        "image": "img/groceries.jpg", 
+        "description": "learn and do some exercises for css layout", 
+        "importance": 3   
+    },
+    { 
+        "taskName": "clean bathroom", 
+        "image": "img/groceries.jpg", 
+        "description": "clean shower and toilet", 
+        "importance": 1    
+    },
+    { 
+        "taskName": "valentines day", 
+        "image": "img/groceries.jpg", 
+        "description": "buy roses for valentines day", 
+        "importance": 5    
+    },
+    { 
+        "taskName": "contracts", 
+        "image": "img/groceries.jpg", 
+        "description": "check contracts for insurance", 
+        "importance": 0    
+    },
+    { 
+        "taskName": "present", 
+        "image": "img/groceries.jpg", 
+        "description": "buy present for brothers birthday", 
+        "importance": 2    
+    },
+    { 
+        "taskName": "wardrobe", 
+        "image": "img/groceries.jpg", 
+        "description": "sort wardrobe and spend the unnecessary clothes", 
+        "importance": 0    
+    },
+    { 
+        "taskName": "window cleaning", 
+        "image": "img/groceries.jpg", 
+        "description": "clean the windows before mother visit", 
+        "importance": 4    
+    },
+    { 
+        "taskName": "watch GOT", 
+        "image": "img/groceries.jpg", 
+        "description": "rewatch Game of Thrones and skip last season", 
+        "importance": 0    
+    }
+]`

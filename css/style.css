@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Navbar */
 .navbar-toggler-icon {
     filter: invert(1);
 }
