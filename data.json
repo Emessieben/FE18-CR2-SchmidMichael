@@ -7,7 +7,7 @@ let toDo = `[
         "deadline": "13.02.2022"  
     },
     { 
-        "taskName": "grid % flex",
+        "taskName": "grid & flex",
         "image": "images/code.jpeg", 
         "description": "learn and do some exercises for css layout", 
         "importance": 0,

@@ -1,23 +1,26 @@
 const tasks = JSON.parse(toDo);
-
+// col-lg-4 col-md-6 col-sm-12 my-2
 tasks.forEach(task => {
     document.querySelector(".card-container").innerHTML +=
-    `<div class="card col-lg-4 col-md-6 col-sm-12 my-2" style="width: 18rem;">
-    <img src="${task.image}" class="card-img-top px-1 pt-4" alt="${task.taskName}">
-    <div class="card-body">
-      <h5 class="card-title">${task.taskName}</h5>
-      <p class="card-text">${task.description}</p>
+    `  
+  <div class="wrapper">
+    <div class="card my-3" style="width: 18rem;">
+      <img src="${task.image}" class="card-img-top px-1 pt-4" alt="${task.taskName}">
+      <div class="card-body">
+        <h5 class="card-title">${task.taskName}</h5>
+        <p class="card-text">${task.description}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Priority: <button type="button" class="btn-prio btn btn-sm btn-success"> ${task.importance}</button></li>
+        <li class="list-group-item">Deadline: ${task.deadline}</li>
+      </ul>
+      <div class="card-body ms-auto">
+        <button type="button" class="btn-d btn btn-sm btn-danger"><i class="bi bi-trash3"></i> Delete</button>
+        <button type="button" class="btn-d btn btn-sm btn-primary"><i class="bi bi-check-circle-fill"></i> Done</button>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Priority: <button type="button" class="btn-prio btn btn-sm btn-success"> ${task.importance}</button></li>
-      <li class="list-group-item">Deadline: ${task.deadline}</li>
-    </ul>
-    <div class="card-body ms-auto">
-      <button type="button" class="btn-d btn btn-sm btn-danger"><i class="bi bi-trash3"></i> Delete</button>
-      <button type="button" class="btn-d btn btn-sm btn-success"><i class="bi bi-check-circle-fill"></i> Done</button>
-    </div>
-  </div>`
-
+  </div>
+  `
 });
 
 const prioBtns = document.querySelectorAll(".btn-prio");
@@ -42,12 +45,18 @@ prioBtns.forEach(function (btn) {
 })
 })
 
-const sortBtn = document.querySelector("")
+const sortBtn = document.querySelector(".sort-btn");
 
-
-
-
-
+sortBtn.addEventListener("click", function () {
+  let innerPrio = document.querySelectorAll(".btn-prio");
+  let arrayPrio = [];
+  for (btn of innerPrio) {
+    arrayPrio.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  }
+  console.log(arrayPrio);
+  let test = document.querySelector(".test");
+  test.innerHTML = arrayPrio[0];
+})
 
 // Done or Delete Button
 // const btnD = document.querySelectorAll(".btn-d");
