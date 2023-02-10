@@ -51,12 +51,63 @@ sortBtn.addEventListener("click", function () {
   let innerPrio = document.querySelectorAll(".btn-prio");
   let arrayPrio = [];
   for (btn of innerPrio) {
+    console.log(btn.innerHTML);
     arrayPrio.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
   }
-  console.log(arrayPrio);
   let test = document.querySelector(".test");
   test.innerHTML = arrayPrio[0];
 })
+
+// Sort
+function sorter(array){
+  let swap, done = false, swapped;
+  // is it done?
+  while (!done){
+    swapped = 0;
+    for(i=1; i < array.length; i++){
+
+      // compare
+      if (array[i-1] > array[i]){
+        // swap
+        swap = array[i];
+        array[i] = array[i-1];
+        array[i-1] = swap;
+        swapped = 1;
+      };
+    };
+    if (swapped == 0) {
+      done = true;
+    }
+  }
+  return array;
+}
+
+let numb = [9,8,7,5,6,2,1]
+
+function sorter(array){
+  let swap, done = false, swapped;
+  // is it done?
+  while (!done){
+    swapped = 0;
+    for(i=1; i < array.length; i++){
+
+      // compare
+      if (array[i-1] > array[i]){
+        // swap
+        swap = array[i];
+        array[i] = array[i-1];
+        array[i-1] = swap;
+        swapped = 1;
+      };
+    };
+    if (swapped == 0) {
+      done = true;
+    }
+  }
+  return array;
+}
+
+console.log(sorter(numb));
 
 // Done or Delete Button
 // const btnD = document.querySelectorAll(".btn-d");
