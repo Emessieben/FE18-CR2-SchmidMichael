@@ -42,7 +42,6 @@ sortBtn.addEventListener("click", e => {
       };
     }
   }
-  console.log(arrayPrioStr);
   // emtpy the card-container and fill with sorted content
   cardContainer.innerText = null;
   for (i in arrayPrioStr){
@@ -50,6 +49,7 @@ sortBtn.addEventListener("click", e => {
     `<div>
     ${arrayPrioStr[i]}
     </div>`
+    
 }});
 
 const prioBtns = document.querySelectorAll(".btn-prio");
@@ -58,7 +58,6 @@ const prioBtns = document.querySelectorAll(".btn-prio");
 prioBtns.forEach(function (btn) {
   btn.addEventListener("click", e => {
     // increase priority +1
-    console.log(btn);
     btn.innerHTML ++;
     if (btn.innerHTML > 5) {
       // stop increasing priority at 5
