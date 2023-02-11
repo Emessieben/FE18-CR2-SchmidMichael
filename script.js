@@ -51,8 +51,9 @@ const btnD = document.querySelectorAll(".btn-d");
 
 btnD.forEach(function(btn) {
     btn.addEventListener("click", function (event) {
-      console.log(event.target);
+      // console.log(event.target);
       let cardEventTarget = event.target.parentElement.parentElement;
+      // add css class hidden to the parent.parent Element which get clicked
       cardEventTarget.classList.add("hidden");
     })
   })
@@ -61,27 +62,59 @@ btnD.forEach(function(btn) {
 const sortBtn = document.querySelector(".sort-btn");
 
 sortBtn.addEventListener("click", function () {
-  let innerPrio = document.querySelectorAll(".btn-prio");
-  console.log(innerPrio.length);
-  let arrayPrio = [];
-  for (let index = 0; index < innerPrio.length; index++) {
-    const element = array[index];
-    
+  let innerPrio = document.querySelectorAll(".btn-prio");  
+  let arrayPrioStr = [];
+  for (let i = 0; i < 6; i++) {
+    for (btn of innerPrio) {
+      if (btn.innerHTML == 5-i) {
+        arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+      };
+    }
   }
-    
-//   for (btn of innerPrio) {
-//     // console.log(btn.innerHTML);
-
-//     if (btn.innerHTML > arrayPrio[0]) {
-//       arrayPrio.unshift(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
-//     } else {
-//       arrayPrio.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
-//     }
-//   }
-//   console.log(arrayPrio);
-//   let test = document.querySelector(".test");
-//   cardContainer.innerHTML = null;
-//   for (i in arrayPrio)
-//     cardContainer.innerHTML += arrayPrio[i];
+  // emtpy card container and fill with sorted content
+  cardContainer.innerText = null;
+  for (i in arrayPrioStr)
+    cardContainer.innerHTML += 
+    `<div class="wrapper">
+    ${arrayPrioStr[i]}
+    </div>`
 }
 );
+
+
+
+
+
+
+// Ignore !
+
+  // for (btn of innerPrio) {
+  //   if (btn.innerHTML == 5) {
+  //     arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  //   }
+  // }
+  // for (btn of innerPrio) {
+  //   if (btn.innerHTML == 4) {
+  //     arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  //   }
+  // }
+  // for (btn of innerPrio) {
+  //   if (btn.innerHTML == 3) {
+  //     arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  //   }
+  // }
+  // for (btn of innerPrio) {
+  //   if (btn.innerHTML == 2) {
+  //     arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  //   }
+  // }
+  // for (btn of innerPrio) {
+  //   if (btn.innerHTML == 1) {
+  //     arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  //   }
+  // }
+  // for (btn of innerPrio) {
+  //   if (btn.innerHTML == 0) {
+  //     arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+  //   }
+  // }
