@@ -1,11 +1,13 @@
+// parse data.json
 const tasks = JSON.parse(toDo);
+
 const cardContainer = document.querySelector(".card-container");
 
 tasks.forEach(task => {
   // create 1 card for each task
     cardContainer.innerHTML +=
 `
-<div class="wrapper">
+    <div class="wrapper">
     <div class="card my-3" style="width: 18rem;">
       <img src="${task.image}" class="card-img-top px-1 pt-4" alt="${task.taskName}">
       <div class="card-body">
@@ -21,15 +23,42 @@ tasks.forEach(task => {
         <button type="button" class="btn-d btn btn-sm btn-primary"><i class="bi bi-check-circle-fill"></i> Done</button>
       </div>
     </div>
-</div>
+    </div>
 `
 });
+
+// Sort
+const sortBtn = document.querySelector(".sort-btn");
+
+sortBtn.addEventListener("click", e => {
+  // sort inner HTML on the basis of priority and add it to an array
+  let innerPrio = document.querySelectorAll(".btn-prio");  
+  let arrayPrioStr = [];
+  // check for every priority 0 => 5, for every cards priority
+  for (let i = 0; i < 6; i++) {
+    for (btn of innerPrio) {
+      if (btn.innerHTML == 5-i) {
+        arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
+      };
+    }
+  }
+  console.log(arrayPrioStr);
+  // emtpy the card-container and fill with sorted content
+  cardContainer.innerText = null;
+  for (i in arrayPrioStr){
+    cardContainer.innerHTML += 
+    `<div>
+    ${arrayPrioStr[i]}
+    </div>`
+}});
+
 const prioBtns = document.querySelectorAll(".btn-prio");
 
 // increase priority and change color
 prioBtns.forEach(function (btn) {
-  btn.addEventListener("click", function (event) {
+  btn.addEventListener("click", e => {
     // increase priority +1
+    console.log(btn);
     btn.innerHTML ++;
     if (btn.innerHTML > 5) {
       // stop increasing priority at 5
@@ -50,36 +79,13 @@ prioBtns.forEach(function (btn) {
 const btnD = document.querySelectorAll(".btn-d");
 
 btnD.forEach(function(btn) {
-    btn.addEventListener("click", function (event) {
-      // console.log(event.target);
-      let cardEventTarget = event.target.parentElement.parentElement;
+    btn.addEventListener("click", e => {
+      let cardEventTarget = e.target.parentElement.parentElement;
       // add css class hidden to the parent.parent Element which get clicked
       cardEventTarget.classList.add("hidden");
     })
   })
 
-// Sort
-const sortBtn = document.querySelector(".sort-btn");
-
-sortBtn.addEventListener("click", function () {
-  let innerPrio = document.querySelectorAll(".btn-prio");  
-  let arrayPrioStr = [];
-  for (let i = 0; i < 6; i++) {
-    for (btn of innerPrio) {
-      if (btn.innerHTML == 5-i) {
-        arrayPrioStr.push(btn.parentElement.parentElement.parentElement.parentElement.innerHTML);
-      };
-    }
-  }
-  // emtpy card container and fill with sorted content
-  cardContainer.innerText = null;
-  for (i in arrayPrioStr)
-    cardContainer.innerHTML += 
-    `<div class="wrapper">
-    ${arrayPrioStr[i]}
-    </div>`
-}
-);
 
 
 
